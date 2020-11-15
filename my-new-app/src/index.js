@@ -9,7 +9,7 @@ const App = () => {
   const btnText = "Click Me!";
     return (
       <div>
-       <label class="label" for="firstname">First name: </label>
+       <label className="label" htmlFor="firstname">First name: </label>
          <input type="text" id="firstname" />
          <button type="button" style={{backgroundColor : 'blue', color : 'white'}} > { btnText}</button>
       </div>
