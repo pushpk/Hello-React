@@ -1,13 +1,12 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import faker from 'faker';
+
 
 const CommnetDetail = (props) => {
 
     return(
     <div className="comment">
     <a href="/" className="avatar">
-      <img alt="avatar" src={props.source}/>
+      <img alt="avatar" src={props.imgSource}/>
     </a>
     <div className="content">
       <a href="/" className="author">
