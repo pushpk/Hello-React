@@ -10,9 +10,9 @@ const App = () => {
   const btnText = "Click Me!";
   return (
     <div className="ui container comments">
-    
-
-     
+      <ComponentDetail />
+      <ComponentDetail />
+      <ComponentDetail />
     </div>
   );
 };
