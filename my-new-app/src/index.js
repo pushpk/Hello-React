@@ -4,58 +4,13 @@ import "./index.css";
 //import App from './App';
 import * as serviceWorker from "./serviceWorker";
 import faker from 'faker';
+import ComponentDetail from './CommentDetail'
 
 const App = () => {
   const btnText = "Click Me!";
   return (
     <div className="ui container comments">
-      <div className="comment">
-        <a href="/" className="avatar">
-          <img alt="avatar" src={faker.image.avatar()}/>
-        </a>
-        <div className="content">
-          <a href="/" className="author">
-            Sam
-          </a>
-          <div className="metadata">
-            <span className="date">Today at 6:00 PM</span>
-          </div>
-
-          <div className="text">Nice blog post!</div>
-        </div>
-      </div>
-
-      <div className="comment">
-        <a href="/" className="avatar">
-          <img alt="avatar" src={faker.image.avatar()}/>
-        </a>
-        <div className="content">
-          <a href="/" className="author">
-            Sam
-          </a>
-          <div className="metadata">
-            <span className="date">Today at 6:00 PM</span>
-          </div>
-
-          <div className="text">Nice blog post!</div>
-        </div>
-      </div>
-
-      <div className="comment">
-        <a href="/" className="avatar">
-          <img alt="avatar" src={faker.image.avatar()}/>
-        </a>
-        <div className="content">
-          <a href="/" className="author">
-            Sam
-          </a>
-          <div className="metadata">
-            <span className="date">Today at 6:00 PM</span>
-          </div>
-
-          <div className="text">Nice blog post!</div>
-        </div>
-      </div>
+    
 
      
     </div>
