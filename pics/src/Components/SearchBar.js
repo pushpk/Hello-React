@@ -1,20 +1,32 @@
-import React from 'react';
+import React from "react";
 
+class SearchBar extends React.Component {
+  state = { term: "" };
 
-class SearchBar extends React.Component{
-    render(){
+  onFormSubmit = e => {
+    // if (e.which === 13) {
+    e.preventDefault();
+     console.log(this.state.term);
+    //}
+  };
 
-        return (
-        <div className="ui segment">
-            <fom className="ui form">
-                <div className="field">
-                <label>Image Search</label>
-                <input type="text" />
-                </div>
-            </fom>
-        </div>
-        );
-    }
+  render() {
+    return (
+      <div className='ui segment'>
+        <form className='ui form' onSubmit={this.onFormSubmit}>
+          <div className='field'>
+            <label>Image Search</label>
+            <input
+              type='text'
+              value={this.state.term}
+              onChange={(e) => this.setState({ term: e.target.value })}
+              // onKeyPress = {this.onKeyPress}
+            />
+          </div>
+        </form>
+      </div>
+    );
+  }
 }
 
-export default SearchBar 
+export default SearchBar;
