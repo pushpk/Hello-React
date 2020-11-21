@@ -6,7 +6,7 @@ class SearchBar extends React.Component {
   onFormSubmit = e => {
     // if (e.which === 13) {
     e.preventDefault();
-     console.log(this.state.term);
+     this.props.onSubmit(this.state.term);
     //}
   };
 
