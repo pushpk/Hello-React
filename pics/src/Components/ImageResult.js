@@ -4,6 +4,8 @@ import ImageCard from "./ImageCard";
 class ImageResult extends React.Component {
   render(props) {
     return (
+        <div>
+        <h4>Found: {this.props.imgData.length} images</h4>
       <div className='ui link cards'>
         {this.props.imgData.map((img) => (
           <ImageCard
@@ -12,6 +14,7 @@ class ImageResult extends React.Component {
             likes={img.likes}
           />
         ))}
+      </div>
       </div>
     );
   }
