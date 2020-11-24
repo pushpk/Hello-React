@@ -1,19 +1,16 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
+import ResourceList from "./ResourceList";
 
 const App = () => {
-   const [resource, setResouce] = useState('posts')
+  const [resource, setResouce] = useState("posts");
 
   return (
     <div>
       <div>
-        <button onClick={() => setResouce('posts')}>
-          Post
-        </button>
-        <button onClick={() => setResouce('todos')}>
-          Todos
-        </button>
+        <button onClick={() => setResouce("posts")}>Post</button>
+        <button onClick={() => setResouce("todos")}>Todos</button>
       </div>
-      {resource}
+      <ResourceList resource={resource} />
     </div>
   );
 };
