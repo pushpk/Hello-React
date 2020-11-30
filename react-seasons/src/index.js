@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
-import SeasonDisplay from './SeasonDisplay'
+import SeasonDisplay from "./SeasonDisplay";
 
 // const App = () => {
 //   return (
@@ -8,38 +8,30 @@ import SeasonDisplay from './SeasonDisplay'
 //     );
 // }
 
-class App extends React.Component {
- 
-  state = { lat: null, errorMessage : null };
+const App = () => {
+  const [lat, setLat] = useState(null);
+  const [errorMessage, setErrorMessage] = useState("");
 
-  componentDidMount(){
-
+  const setPostion = () => {
     window.navigator.geolocation.getCurrentPosition(
-      position => this.setState({ lat: position.coords.latitude }),
-      err =>  this.setState({ errorMessage: err.message})
+      (position) => setLat(position.coords.latitude),
+      (err) => setErrorMessage(err.message)
     );
+  };
 
+  useEffect(() => {
+    setPostion();
+  }, [lat]);
+
+  if (errorMessage && !lat) {
+    return <div>Error: {errorMessage}</div>;
   }
 
-  componentDidUpdate(){
-    console.log("cmp did update!")
+  if (!errorMessage && lat) {
+    return <SeasonDisplay lat={lat} />;
   }
 
-  render() {
-    if(this.state.errorMessage && !this.state.lat)
-    {
-      return <div>Error: {this.state.errorMessage}</div>;
-
-    }
-
-    if(!this.state.errorMessage && this.state.lat)
-    {
-      return <SeasonDisplay lat={this.state.lat} />;
-      
-    }
-
-    return <div>Loading...</div>;
-  }
-}
+  return <div>Loading...</div>;
+};
 
 ReactDOM.render(<App />, document.getElementById("root"));
